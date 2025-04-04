@@ -3,29 +3,83 @@
 // Desafio de Xadrez - MateCheck
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+// Função recursiva para movimentação da Torre
+void moverTorre(int casas) {
+    if (casas > 0) {
+        printf("Direita\n");
+        moverTorre(casas - 1);
+    }
+}
+
+// Função recursiva para movimentação da Rainha
+void moverRainha(int casas) {
+    if (casas > 0) {
+        printf("Esquerda\n");
+        moverRainha(casas - 1);
+    }
+}
+
+// Função recursiva para movimentação do Bispo
+void moverBispo(int casas) {
+    if (casas > 0) {
+        printf("Cima Direita\n");
+        moverBispo(casas - 1);
+    }
+}
+
+// Função para movimentação do Cavalo
+void moverCavalo(int verticais, int horizontais) {
+    for (int i = 0; i < verticais; i++) {
+        printf("Cima\n");
+    }
+    for (int j = 0; j < horizontais; j++) {
+        printf("Direita\n");
+    }
+}
+
 
 int main() {
-    printf("Movimento da Torre:\n");
+
+    int m, n;
+    //Movimento da Torre
+    printf("\nMovimento da Torre\n");
+    movertorre(5);
     for (int i =0; i < 5; i++)
     {
         printf("Direita\n");
     }
-    
-    printf("Movimento do Bispo\n");
+    //Movimento do Bispo
+    printf("\nMovimento do Bispo\n");
+    moverBispo(5);
     int j = 0;
     
     while(j < 5){
         printf("Cima, Direita\n");
         j++;
     }
-
-   printf("Movimento Rainha\n");
+    //Movomento Rainha
+   printf("\nMovimento Rainha\n");
+   moverRainha(8);
    int k = 0;
    do{
-    printf("Movimento esquerda\n");
+    printf("\nMovimento esquerda\n");
     k++;
 
    } while(k < 8);
+
+   //Movimento Cavalo
+
+   printf("\nMovimento do Cavalo\n");
+   moverCavalo(5);
+    for (m = 0; m <= 2; m++)
+    {
+        printf("Cima\n");
+    } 
+    for (n = 0; n <= 1; n++)
+    {
+        printf("Esquerda\n");
+    }
+
 
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
